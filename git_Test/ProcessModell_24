@@ -1,0 +1,125 @@
+<ProcessModel id="1">
+  <name>test</name>
+  <description></description>
+  <processSenarioID>3a0851d1-c820-4b1f-abf6-909cb6d9b191</processSenarioID>
+  <ID>24</ID>
+  <revisionNumber>1570717501527</revisionNumber>
+  <groupId>5</groupId>
+  <autoDeleteFlag>false</autoDeleteFlag>
+  <importRevision>0</importRevision>
+  <isPersistent>false</isPersistent>
+  <useRecovery>false</useRecovery>
+  <isMassData>false</isMassData>
+  <isFifo>false</isFifo>
+  <isGroupedFifo>false</isGroupedFifo>
+  <ensureEventFifo>false</ensureEventFifo>
+  <priority>NORMAL</priority>
+  <priorityDerived>false</priorityDerived>
+  <logLevel>0</logLevel>
+  <deleteLog>false</deleteLog>
+  <redeployPolicy>0</redeployPolicy>
+  <volatilePoicy>0</volatilePoicy>
+  <manualRestart>false</manualRestart>
+  <processTyp>0</processTyp>
+  <clusterMode>0</clusterMode>
+  <pipelineMode>false</pipelineMode>
+  <bestEffortLimit>0</bestEffortLimit>
+  <businessKeys id="2"/>
+  <processObjects id="3">
+    <EventStart id="4">
+      <processModel reference="1"/>
+      <id>101</id>
+      <displayText>start</displayText>
+      <inAssignments id="5"/>
+      <outAssignments id="6"/>
+      <xpos>150.0</xpos>
+      <ypos>130.0</ypos>
+      <width>20.0</width>
+      <height>20.0</height>
+    </EventStart>
+    <EventEnd id="7">
+      <processModel reference="1"/>
+      <id>102</id>
+      <displayText>end</displayText>
+      <inAssignments id="8"/>
+      <outAssignments id="9"/>
+      <xpos>410.0</xpos>
+      <ypos>130.0</ypos>
+      <width>20.0</width>
+      <height>20.0</height>
+    </EventEnd>
+    <emds.epi.decl.modell.process.ScriptTask id="10">
+      <processModel reference="1"/>
+      <id>103</id>
+      <displayText>PlainScript</displayText>
+      <inAssignments id="11"/>
+      <outAssignments id="12"/>
+      <xpos>250.0</xpos>
+      <ypos>120.0</ypos>
+      <width>100.0</width>
+      <height>40.0</height>
+      <namespaceContext id="13"/>
+      <intermediateEvents id="14"/>
+      <transactionMode>ACTIVITY_USE_ACTIVE_OR_ATTACH</transactionMode>
+      <retryCount>3</retryCount>
+      <retryDelay id="15">
+        <unit>SECOND</unit>
+        <value>10</value>
+      </retryDelay>
+      <userDefined>false</userDefined>
+      <messageSizeStrategy>0</messageSizeStrategy>
+      <script>
+/* ***************************************************************************
+ * Add your own java code!
+ * ***************************************************************************/
+</script>
+      <imports>
+	</imports>
+      <parameters class="linked-list" id="16"/>
+      <scriptID>EmptyScript</scriptID>
+      <description>A plain script</description>
+    </emds.epi.decl.modell.process.ScriptTask>
+  </processObjects>
+  <annotations id="17"/>
+  <edges id="18">
+    <EdgeSequence id="19">
+      <processModel reference="1"/>
+      <id>105</id>
+      <m__arNode id="20">
+        <EventStart reference="4"/>
+        <emds.epi.decl.modell.process.ScriptTask reference="10"/>
+      </m__arNode>
+      <bentStyle>STRAIGHT</bentStyle>
+      <defaultEdge>false</defaultEdge>
+      <showAsEdgeLabel>false</showAsEdgeLabel>
+    </EdgeSequence>
+    <EdgeSequence id="21">
+      <processModel reference="1"/>
+      <id>107</id>
+      <m__arNode id="22">
+        <emds.epi.decl.modell.process.ScriptTask reference="10"/>
+        <EventEnd reference="7"/>
+      </m__arNode>
+      <bentStyle>STRAIGHT</bentStyle>
+      <defaultEdge>false</defaultEdge>
+      <showAsEdgeLabel>false</showAsEdgeLabel>
+    </EdgeSequence>
+  </edges>
+  <properties id="23">
+    <Property id="24">
+      <name>CURMSG</name>
+      <type class="ArgumentType">message</type>
+      <usagePattern>INPUT</usagePattern>
+      <description>current message</description>
+      <requiredOnInput>false</requiredOnInput>
+    </Property>
+    <Property id="25">
+      <name>ERROR</name>
+      <type class="ComplexType" id="26">error</type>
+      <usagePattern>LOCAL</usagePattern>
+      <description>Error information object</description>
+      <requiredOnInput>false</requiredOnInput>
+    </Property>
+  </properties>
+  <maxElementId>107</maxElementId>
+</ProcessModel>
